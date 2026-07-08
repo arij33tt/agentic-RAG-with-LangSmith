@@ -1,0 +1,39 @@
+# Environment and secrets
+.env
+.env.*
+*.env
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+credentials.json
+service-account*.json
+
+# Python virtual environments and caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Build artifacts
+build/
+dist/
+out/
+
+# Local data and editor files
+*.sqlite
+*.sqlite3
+*.db
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+ 
