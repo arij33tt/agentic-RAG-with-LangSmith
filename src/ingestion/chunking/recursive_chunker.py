@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 class RecursiveChunker(BaseChunker):
     """
     Structure-aware chunking: tries paragraph breaks first, then
-    sentences, then words — only cutting mid-sentence as a last resort.
+    sentences, then words - only cutting mid-sentence as a last resort.
     This is the safe, reliable default chunker for most document types.
     """
 
