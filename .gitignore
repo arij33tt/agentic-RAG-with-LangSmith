@@ -11,6 +11,8 @@
 credentials.json
 service-account*.json
 
+text.py
+
 # Python virtual environments and caches
 .venv/
 venv/

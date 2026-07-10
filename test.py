@@ -109,6 +109,31 @@
 from src.database.supabase_client import supabase
 
 # try a simple read — should return an empty list if your documents table is empty, not an error
-response = supabase.table("documents").select("*").limit(1).execute()
-print("Connection successful!")
-print(response.data)
+# response = supabase.table("documents").select("*").limit(1).execute()
+# print("Connection successful!")
+# print(response.data)
+
+
+
+# test_semantic_chunker.py (delete after confirming)
+from src.ingestion.chunking.semantic_chunker import SemanticChunker
+from uuid import uuid4
+
+transcript = """
+Today we discussed the quarterly sales figures. Revenue grew by 12 percent
+compared to last quarter. The sales team attributed this growth to the new
+outreach campaign. Marketing spend also increased during this period.
+
+Switching topics, the engineering team gave an update on the new feature
+rollout. The rollout is currently at 60 percent completion. There were
+some delays due to unexpected infrastructure issues. The team expects to
+finish within two weeks.
+"""
+
+chunker = SemanticChunker()
+chunks = chunker.chunk(transcript, document_id=uuid4(), tenant_id=uuid4())
+
+print(f"Produced {len(chunks)} chunks")
+for c in chunks:
+    print("---")
+    print(c.content)
