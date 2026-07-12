@@ -26,8 +26,8 @@ class EmbeddingService:
     """
 
     def __init__(self, model_name: str | None = None, expected_dim: int | None = None):
-        self.model_name = model_name or settings.embedding_model
-        self.expected_dim = expected_dim or settings.embedding_dim
+        self.model_name = model_name or settings.EMBEDDING_MODEL
+        self.expected_dim = expected_dim or settings.EMBEDDING_DIM
 
         logger.info(f"Loading embedding model: {self.model_name}")
         self.model = SentenceTransformer(self.model_name)
