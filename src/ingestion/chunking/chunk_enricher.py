@@ -30,7 +30,7 @@ class ChunkEnricher():
         prepends short llm genereated summary of chunks context , before embeddings , Improves retrieval accuracy 
         """
         
-        enriched:list[ChunkCreate]
+        enriched:list[ChunkCreate]=[]
         
         for chunk in chunks:
             try:

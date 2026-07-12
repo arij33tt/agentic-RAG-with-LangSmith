@@ -13,6 +13,8 @@ service-account*.json
 
 text.py
 
+test2.py
+
 # Python virtual environments and caches
 .venv/
 venv/
