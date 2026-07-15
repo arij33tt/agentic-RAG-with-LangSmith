@@ -3,7 +3,7 @@ import io
 import requests
 from  abc import ABC,abstractmethod
 from pypdf import PdfReader
-import pymupdf
+
 from docx import Document as DocxDocument
 from bs4 import BeautifulSoup
 
@@ -105,8 +105,30 @@ class TextLoader(BaseLoader):
             return source.decode("utf-8",errors="ignore")
         
         return source
+
+
+def get_loader(source_type:str)->BaseLoader:
     
+    """
+    Factory function: given a source_type string (matching the
+    SOURCE_TYPES literal in document_schema file), returns the right
+    loader instance. This is what pipeline will call.
+    """
     
+    loaders={
+        "pdf": PDFLoader(),
+        "docx": DocxLoader(),
+        "html": HTMLLoader(),
+        "url": URLLoader(),
+        "txt": TextLoader(),
+        "markdown": TextLoader()
+    }
+    
+    loader = loaders.get(source_type)
+    if loader is None:
+        raise LoaderError (f" No Loader for source_type")
+    
+    return loader
 
             
             
