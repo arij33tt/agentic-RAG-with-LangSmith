@@ -31,7 +31,7 @@ class IngestionPipeline:
     def __init__(
         self,
         embedding_service:EmbeddingService,
-        lll_client, # contextual meaning add 
+        llm_client, # contextual meaning add 
         use_semantic_chunking:bool = False,
         use_parent_child:bool=True
     ):
@@ -39,7 +39,7 @@ class IngestionPipeline:
         self.cleaner = TextCleaner()
         self.semantic_chunker= SemanticChunker()
         self.recursive_chunker = RecursiveChunker()
-        self.enricher = ChunkEnricher(llm_client=lll_client)
+        self.enricher = ChunkEnricher(llm_client=llm_client)
         self.use_semantic_chunking = use_semantic_chunking
         self.use_parent_child = use_parent_child
         
