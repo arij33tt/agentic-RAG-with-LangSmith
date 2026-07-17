@@ -6,8 +6,8 @@ from typing import Literal
 class Settings(BaseSettings):
     SUPABASE_URL: str
     SUPABASE_SERVICE_KEY: str
-    primary_llm_provider: str = "openai"
-    fallback_llm_provider: str= "groq"
+    primary_llm_provider: str = "groq"
+    fallback_llm_provider: str= "gemini"
     
     EMBEDDING_MODEL: str = "BAAI/bge-base-en-v1.5"
     EMBEDDING_DIM: int =1024
@@ -15,8 +15,8 @@ class Settings(BaseSettings):
     redis_url: str = "redis://localhost:6379/0"
     
     OPENAI_API_KEY :str =""
-    
-    
+    GROQ_API_KEY:str=""
+    GEMINI_API_KEY:str=""
     
     MAX_RETRIEVAL_RETRIES:int = 2
     RATE_LIMIT_PER_MINUTE: int = 60
