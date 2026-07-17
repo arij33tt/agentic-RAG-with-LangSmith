@@ -13,7 +13,7 @@ class DocumentCreate(BaseModel):
     source_uri: str | None = None
     source_type: SOURCE_TYPES
     checksum:str=Field(...,min_length=64,max_length=64) # sh256 checksum of the document
-    status: Literal["pending", "processing", "completed", "failed"] = "pending"
+    status: Literal["pending", "processing", "ready", "failed"] = "pending"
     metadata:dict = Field(default_factory=dict)
     
     

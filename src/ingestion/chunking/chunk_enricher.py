@@ -58,7 +58,7 @@ class ChunkEnricher():
     
     #  now adding parent chunk to child chunk 
     
-    def create_parent_chunk_links(self,child_chunks:list[ChunkCreate])-> tuple[list[ChunkCreate],list[ChunkCreate]]:
+    def create_parent_child_links(self,child_chunks:list[ChunkCreate])-> tuple[list[ChunkCreate],list[ChunkCreate]]:
         """group every `grup_size` consect. child chunks into one large parent chunk 
             return parent_chunk, updated child chunks .
             
