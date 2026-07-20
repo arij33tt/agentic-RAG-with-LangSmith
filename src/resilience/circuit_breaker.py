@@ -23,7 +23,7 @@ class CircuitBreaker:
         self._lock = Lock()
 
     def is_open(self, provider_name: str) -> bool:
-        """True = don't even try this provider right now."""
+        """True = don't even try this provider right now"""
         with self._lock:
             opened_at = self._opened_at.get(provider_name)
             if opened_at is None:

@@ -20,7 +20,7 @@ class Settings(BaseSettings):
     
     MAX_RETRIEVAL_RETRIES:int = 2
     RATE_LIMIT_PER_MINUTE: int = 60
-    
+    SUPABASE_DB_CONNECTION_STRING: str
     
     environment: Literal["dev", "staging", "prod"] = "dev"
     
